@@ -1,0 +1,100 @@
+.checkout-page {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 40px 20px;
+ background-color: #f3f4f6;
+ min-height: 100vh;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.checkout-card {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.checkout-card:hover {
+  transform: translateY(-3px);
+}
+
+.checkout-page h2 {
+  color: #2563eb;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.checkout-page p {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.checkout-button {
+  background-color: rgb(14, 221, 14);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.checkout-button:hover {
+  background-color: darkgreen;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.checkout-form label {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+.checkout-form select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.checkout-form button {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.checkout-from button:hover {
+    background-color: #059669;
+    transform: scale(1.03);
+}
