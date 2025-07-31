@@ -17,7 +17,7 @@ function ProductCard({ product, onAddToCart, onAddToWishlist }) {
             </p>
             <p>⭐ {product.rating}</p>
             <div className="card-buttons">
-            <button onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}>Adaugă în coș</button>
+            <button onClick={(e) => { e.stopPropagation(); navigate(`/produs/${product.id}`) }}>Adaugă în coș</button>
             <button onClick={(e) => { e.stopPropagation(); onAddToWishlist(product); }}>❤️</button>
             </div>
         </div>

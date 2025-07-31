@@ -2,11 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import products from '../data/products.json';
 import '../data/ProductDetails.css';
+import { useNavigate } from 'react-router-dom';
 
 function ProductDetails({ onAddToCart }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const foundProduct = products.find((p) => String(p.id) === id);
@@ -24,6 +26,7 @@ function ProductDetails({ onAddToCart }) {
     const productWithSize = {
         ...product, 
         selectedSize: selectedSize || null,
+        sizeLabel: product.categorie === "Telefoane" ? "Memorie" : "Mărime",
     };
 
     onAddToCart(productWithSize);
@@ -34,6 +37,10 @@ function ProductDetails({ onAddToCart }) {
   if (!product) return <p className="loading">Se încarcă...</p>;
 
   return (
+      <>
+        <button className="back-button" onClick={() => navigate('/')}>
+           ⬅️ Înapoi la produse
+        </button>
     <div className="product-details-container">
       <div className="product-image-section">
         <img src={product.image} alt={product.name} />
@@ -65,6 +72,7 @@ function ProductDetails({ onAddToCart }) {
         </button>
       </div>
     </div>
+  </>
   );
 }
 

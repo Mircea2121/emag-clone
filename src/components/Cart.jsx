@@ -17,6 +17,10 @@ function Cart({ cartItems, clearCart, removeItem }) {
     };
 
     return (
+    <>
+        <button className="back-button" onClick={() => navigate('/')}>
+           ⬅️ Înapoi la produse
+        </button>
         <div className="cart-page">
             <h2>Coșul tău</h2>
             {cartItems.length === 0 ? (
@@ -34,7 +38,7 @@ function Cart({ cartItems, clearCart, removeItem }) {
                             <div className="cart-item-details">
                             <p>{item.name} x {item.quantity || 1} - {item.price} Lei</p>
                             {item.selectedSize && (
-                              <p><strong>Mărime:</strong> {item.selectedSize}</p>
+                              <p><strong>{item.sizeLabel || "Mărime"}:</strong> {item.selectedSize}</p>
                             )}
                             </div>
                             <button
@@ -53,6 +57,7 @@ function Cart({ cartItems, clearCart, removeItem }) {
             </>
             )}
         </div>
+    </>
     );
 }
 
