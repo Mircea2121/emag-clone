@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Mircea2121/emag-clone/static/css/main.fd3c92ef.css",
-    "main.js": "/Mircea2121/emag-clone/static/js/main.238d46df.js",
+    "main.js": "/Mircea2121/emag-clone/static/js/main.c37ad86e.js",
     "index.html": "/Mircea2121/emag-clone/index.html",
     "main.fd3c92ef.css.map": "/Mircea2121/emag-clone/static/css/main.fd3c92ef.css.map",
-    "main.238d46df.js.map": "/Mircea2121/emag-clone/static/js/main.238d46df.js.map"
+    "main.c37ad86e.js.map": "/Mircea2121/emag-clone/static/js/main.c37ad86e.js.map"
   },
   "entrypoints": [
     "static/css/main.fd3c92ef.css",
-    "static/js/main.238d46df.js"
+    "static/js/main.c37ad86e.js"
   ]
 }
