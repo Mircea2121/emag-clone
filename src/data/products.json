@@ -1,61 +1,61 @@
 [
     {
         "id": 1,
-        "name": "Pantofi sport Puma unisex",
-        "price": 293.3,
-        "oldPrice": 335.2,
+        "name": "Puma unisex sports shoes",
+        "price": 64.3,
+        "oldPrice": 74.5,
         "image": "https://i.postimg.cc/Pqwk0z51/0bfd5161-74a8-4-huge.jpg",
         "rating": 4.5,
-        "categorie": "Încălțăminte",
+        "categorie": "Footwear",
         "sizes": ["38", "39", "40", "41", "42"]
     },
     {
         "id": 2,
-        "name": "Detergent Perwoll Renew Color",
-        "price": 39.2,
-        "oldPrice": 45.3,
+        "name": "Perwoll Renew Color Laundry Detergent",
+        "price": 9.4,
+        "oldPrice": 10.9,
         "image": "https://i.postimg.cc/TwvpGbCr/Perwoll-Renew-Color-1.jpg",
         "rating": 4.7,
-        "categorie": "Produse casnice"
+        "categorie": "Household"
     },
        {
         "id": 3,
         "name": "Nike Air Force 1",
-        "price": 549.5,
-        "oldPrice": 613.2,
+        "price": 116.5,
+        "oldPrice": 128.2,
         "image": "https://i.postimg.cc/4yRw03fQ/jd-030664-a.webp",
         "rating": 4.8,
-        "categorie": "Încălțăminte",
+        "categorie": "Footwear",
         "sizes": ["38", "39", "40", "41", "42"]
     },
       {
         "id": 4,
         "name": "Jordan MVP Junior",
-        "price": 531.5,
-        "oldPrice": 594.2,
+        "price": 108.5,
+        "oldPrice": 120.5,
         "image": "https://i.postimg.cc/k4YRV1Z6/jd-752683-a.webp",
         "rating": 4.4,
-        "categorie": "Încălțăminte",
+        "categorie": "Footwear",
         "sizes": ["38", "39", "40", "41", "42"]
     },
       {
         "id": 5,
         "name": "iPhone 16 Pro Max 256GB - Black Titanium - Unlocked",
-        "price": 6241.3,
-        "oldPrice": 6542.2,
+        "price": 1164.2,
+        "oldPrice": 1230.4,
         "image": "https://i.postimg.cc/J0yDj3VT/93cf8df0-767b-4323-a17d-0f01f5ce4b04-1-397f83c1-ffc4-4de0-bdfd-bb38a263a770.png",
         "rating": 4.6,
-        "categorie": "Telefoane",
+        "categorie": "Phones",
         "sizes": ["64GB", "128GB", "256GB", "512GB"]
     },
       {
         "id": 6,
         "name": "Unisex Chef T-Shirt Black",
-        "price": 49.9,
-        "oldPrice": 69.9,
+        "price": 9.99,
+        "oldPrice": 13.99,
         "image": "https://i.postimg.cc/W1w6DG8v/a295-primary.webp",
         "rating": 4.1,
-        "categorie": "Îmbrăcăminte",
+        "categorie": "Clothing",
         "sizes": ["XS", "S", "M", "L", "XL", "XXL"]
     }
 ]

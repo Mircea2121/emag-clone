@@ -4,16 +4,16 @@ import "../data/ProductList.css";
 
 
 function ProductList({ products, onAddToCart, onAddToWishlist, setSelectedCategory }) {
-    const filteredProducts = setSelectedCategory === "Toate"
+    const filteredProducts = setSelectedCategory === "All"
       ? products
       : products.filter(p => p.categorie === setSelectedCategory)
     return (
         <div className="page-layout">
 
    <aside className="sidebar">
-        <h3>Categorii</h3>
+        <h3>Categories</h3>
         <ul>
-          {["Toate", "Îmbrăcăminte", "Încălțăminte", "Produse casnice", "Electrocasnice", "Telefoane", "Rechizite", "Sport"].map((cat) => (
+          {["All", "Clothing", "Footwear", "Household", "Appliances", "Phones", "Stationery", "Sports"].map((cat) => (
             <li key={cat}>
               <button onClick={() => setSelectedCategory(cat)}>{cat}</button>
             </li>
@@ -23,7 +23,7 @@ function ProductList({ products, onAddToCart, onAddToWishlist, setSelectedCatego
 
     <section className="product-list">
       {products.length === 0 ? (
-       <p style={{ padding: "1rem" }}>Niciun produs găsit.</p>
+       <p style={{ padding: "1rem" }}>No products found.</p>
      ) : (
         products.map((product) => (
           <ProductCard

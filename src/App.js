@@ -15,8 +15,8 @@ import ProductDetails from './components/ProductDetails';
 function App() {
   const [wishlist, setWishlist] = useState([]);
   const [products] = useState(productsData);
-  const [selectedCategory, setSelectedCategory] = useState("Toate");
-  const filteredProducts = selectedCategory === "Toate"
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const filteredProducts = selectedCategory === "All"
     ? products
     : products.filter(p => p.categorie === selectedCategory);
   

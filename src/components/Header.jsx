@@ -10,7 +10,7 @@ function Header({ cartItems }) {
             </div>
             <div className="cart-info">
             <Link to="/cart" className="cart-link">
-                🛒 Cart: {cartItems.length} produse
+                🛒 Cart: {cartItems.length} products
             </Link>
             </div>
         </header>

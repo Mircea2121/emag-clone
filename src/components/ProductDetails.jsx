@@ -19,27 +19,27 @@ function ProductDetails({ onAddToCart }) {
 
   const handleAddToCart = () => {
     if (product.sizes && product.sizes.length > 0 && !selectedSize) {
-      alert("Te rog selectează o mărime!");
+      alert("Please select a size!");
       return;
     }
 
     const productWithSize = {
         ...product, 
         selectedSize: selectedSize || null,
-        sizeLabel: product.categorie === "Telefoane" ? "Memorie" : "Mărime",
+        sizeLabel: product.categorie === "Phones" ? "Memory" : "Size",
     };
 
     onAddToCart(productWithSize);
-    alert(`Adăugat în coș: ${product.name}${selectedSize ? ` Mărime: ${selectedSize})` : ""}`);
+    alert(`Added to cart: ${product.name}${selectedSize ? ` Size: ${selectedSize})` : ""}`);
     // aici poți integra cu context sau localStorage dacă vrei persistentă reală
   };
 
-  if (!product) return <p className="loading">Se încarcă...</p>;
+  if (!product) return <p className="loading">Loading...</p>;
 
   return (
       <>
         <button className="back-button" onClick={() => navigate('/')}>
-           ⬅️ Înapoi la produse
+           ⬅️ Back to products
         </button>
     <div className="product-details-container">
       <div className="product-image-section">
@@ -50,16 +50,16 @@ function ProductDetails({ onAddToCart }) {
         <h2>{product.name}</h2>
         <p className="description">{product.description}</p>
         <p className="price">
-          <del>{product.oldPrice} Lei</del> <strong>{product.price} Lei</strong>
+          <del>{product.oldPrice} €</del> <strong>{product.price} €</strong>
         </p>
         <p className="rating">⭐ {product.rating}</p>
       {product.sizes && product.sizes.length > 0 && (
         <div className="size-selector">
           <label htmlFor="size">
-            {product.categorie === "Telefoane" ? "Memorie:" : "Mărime:"}
+            {product.categorie === "Phones" ? "Memory:" : "Size:"}
           </label>
           <select id="size" value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
-            <option value="">Selectează</option>
+            <option value="">Select</option>
             {product.sizes?.map((size) => (
               <option key={size} value={size}>{size}</option>
             ))}
@@ -68,7 +68,7 @@ function ProductDetails({ onAddToCart }) {
       )}
 
         <button className="add-to-cart-btn" onClick={handleAddToCart}>
-          Adaugă în coș
+          Add to cart
         </button>
       </div>
     </div>

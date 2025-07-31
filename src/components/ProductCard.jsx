@@ -12,12 +12,12 @@ function ProductCard({ product, onAddToCart, onAddToWishlist }) {
         <div className="product-title-and-button">
             <h3>{product.name}</h3>
             <p>
-                <s>{product.oldPrice} Lei</s>
-                <strong> {product.price} Lei</strong>
+                <s>{product.oldPrice} €</s>
+                <strong> {product.price} €</strong>
             </p>
             <p>⭐ {product.rating}</p>
             <div className="card-buttons">
-            <button onClick={(e) => { e.stopPropagation(); navigate(`/produs/${product.id}`) }}>Adaugă în coș</button>
+            <button onClick={(e) => { e.stopPropagation(); navigate(`/produs/${product.id}`) }}>Add to cart</button>
             <button onClick={(e) => { e.stopPropagation(); onAddToWishlist(product); }}>❤️</button>
             </div>
         </div>

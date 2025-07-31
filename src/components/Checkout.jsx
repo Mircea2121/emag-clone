@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 function Checkout({ cart, setCart }) {
     const [formData, setFormData] = useState({
-        nume: "",
+        name: "",
         email: "",
-        telefon: "",
-        adresa: "",
-        plata: "cash",
+        phone: "",
+        adress: "",
+        payment: "cash",
     });
 
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Checkout({ cart, setCart }) {
         console.log("Cart items:", cartItems);
         
         const produseText = cartItems
-            .map(item => `• ${item.name} x ${item.quantity || 1} (${item.price} RON)`
+            .map(item => `• ${item.name} x ${item.quantity || 1} (${item.price} €)`
             ).join("<br>");
 
             console.log("Produse trimise:", produseText);
@@ -40,38 +40,38 @@ function Checkout({ cart, setCart }) {
             "service_uoeev58",
             "template_o9dbob8",
             {
-              user_name: formData.nume,
+              user_name: formData.name,
               user_email: formData.email,
-              user_phone: formData.telefon,
-              user_address: formData.adresa,
-              payment_method: formData.plata,
+              user_phone: formData.phone,
+              user_address: formData.adress,
+              payment_method: formData.payment,
               produse_comandate: produseText,
             },
             "jAJ8yM3KNMeSj45Nq"
           )
           .then(
             (response) => {
-              console.log("Email trimis cu succes!", response.status);
+              console.log("Email sent successfully", response.status);
               setIsLoading(false);
               setSuccess(true)
-              alert("Comanda ta a fost trimisă cu succes!");
+              alert("Your order has been placed successfully!");
 
               localStorage.removeItem("cart");
               setCart([]);
 
                setFormData({
-                  nume: "",
+                  name: "",
                   email: "",
-                  telefon: "",
-                  adresa: "",
-                  plata: "cash",
+                  phone: "",
+                  adress: "",
+                  payment: "cash",
         });
         navigate("/thank-you")
             },
             (error) => {
-              console.error("Eroarea la trimiterea emailului:", error.text);
+              console.error("There was an error sending the email:", error.text);
               setIsLoading(false);
-              alert("A apărut o eroare. Încearcă din nou!");
+              alert("An error occurred. Please try again!");
             }
           );
     };
@@ -79,15 +79,15 @@ function Checkout({ cart, setCart }) {
     return (
         <div className="checkout-page">
           <div className="checkout-card">
-            <h2>Finalizare comandă</h2>
-            {isLoading && <p>⏳ Se trimite comanda...</p>}
+            <h2>Complete Order</h2>
+            {isLoading && <p>⏳ Placing order...</p>}
             <form onSubmit={handleSubmit} className="checkout-form">
   <label>
-    Nume complet🧑:
+    Full name🧑:
     <input
       type="text"
-      name="nume"
-      value={formData.nume}
+      name="name"
+      value={formData.name}
       onChange={handleChange}
       required
     />
@@ -105,41 +105,41 @@ function Checkout({ cart, setCart }) {
   </label>
 
   <label>
-    Telefon📞:
+    Phone📞:
     <input
       type="text"
-      name="telefon"
-      value={formData.telefon}
+      name="phone"
+      value={formData.phone}
       onChange={handleChange}
       required
     />
   </label>
 
   <label>
-    Adresă de livrare🏠:
+    Shipping address🏠:
     <textarea
-      name="adresa"
-      value={formData.adresa}
+      name="adress"
+      value={formData.adress}
       onChange={handleChange}
       required
     />
   </label>
 
   <label>
-    Metodă de plată💳:
+    Payment method💳:
     <select
-      name="plata"
-      value={formData.plata}
+      name="payment"
+      value={formData.payment}
       onChange={handleChange}
       required
     >
-      <option value="cash">Ramburs (cash)</option>
-      <option value="card">Card bancar</option>
-      <option value="transfer">Transfer bancar</option>
+      <option value="cash">Cash on delivery (COD)</option>
+      <option value="card">Credit or debit card</option>
+      <option value="transfer">Bank transfer</option>
     </select>
   </label>
 
-  <button type="submit">Trimite comanda</button>
+  <button type="submit">Place order</button>
         </form>
      </div>
  </div>

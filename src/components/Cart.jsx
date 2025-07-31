@@ -19,12 +19,12 @@ function Cart({ cartItems, clearCart, removeItem }) {
     return (
     <>
         <button className="back-button" onClick={() => navigate('/')}>
-           ⬅️ Înapoi la produse
+           ⬅️ Back to products
         </button>
         <div className="cart-page">
-            <h2>Coșul tău</h2>
+            <h2>Your cart</h2>
             {cartItems.length === 0 ? (
-                <p>Coșul este gol😢</p>
+                <p>Your cart is empty😢</p>
             ) : (
             <>    
                 <ul>
@@ -36,23 +36,23 @@ function Cart({ cartItems, clearCart, removeItem }) {
                               className="cart-item-image"
                             />
                             <div className="cart-item-details">
-                            <p>{item.name} x {item.quantity || 1} - {item.price} Lei</p>
+                            <p>{item.name} x {item.quantity || 1} - {item.price} €</p>
                             {item.selectedSize && (
-                              <p><strong>{item.sizeLabel || "Mărime"}:</strong> {item.selectedSize}</p>
+                              <p><strong>{item.sizeLabel || "Size"}:</strong> {item.selectedSize}</p>
                             )}
                             </div>
                             <button
                             className="remove-button"
-                             onClick={() => removeItem(index)}>Șterge</button>
+                             onClick={() => removeItem(index)}>Delete</button>
                         </div>
                     ))}
                 </ul>
-                <h3>Total: {total.toFixed(2)} Lei</h3>
+                <h3>Total: {total.toFixed(2)} €</h3>
                 <button className="clear-cart-button" onClick={clearCart}>
-                    Golește coșul
+                    Clear cart
                 </button>
                 <button className="checkout-button" onClick={handleCheckout}>
-                    Finalizează comanda
+                    Place order
                 </button>
             </>
             )}
