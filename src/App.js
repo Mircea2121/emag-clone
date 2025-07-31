@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
@@ -50,7 +50,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <>
       <Header cartItems={cart} />
       <Routes>
         <Route path="/" element={<ProductList products={filteredProducts} onAddToCart={handleAddToCart} onAddToWishlist={handleAddToWishList} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />} />
@@ -60,7 +60,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist wishlistItems={wishlist} />} />
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

@@ -6,11 +6,11 @@ function Header({ cartItems }) {
         <header className="header">
             <div className="left-section">
                 <Link to="/" className="home-link">🏠 Home</Link>
-            <h1 className="logo">Magazinul unui programator începator  👨‍💻👋🏽</h1>
+            <h1 className="logo">A Junior Developer's Store  👨‍💻👋🏽</h1>
             </div>
             <div className="cart-info">
             <Link to="/cart" className="cart-link">
-                🛒 Coș: {cartItems.length} produse
+                🛒 Cart: {cartItems.length} produse
             </Link>
             </div>
         </header>
