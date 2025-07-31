@@ -1,6 +1,7 @@
 {
   "name": "emag-clone",
   "version": "0.1.0",
+  "homepage": "https://github.com/Mircea2121/emag-clone",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
