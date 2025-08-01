@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header({ cartItems }) {
+function Header({ cartItems, wishlistItems }) {
     return (
         <header className="header">
             <div className="left-section">
@@ -11,6 +11,9 @@ function Header({ cartItems }) {
             <div className="cart-info">
             <Link to="/cart" className="cart-link">
                 🛒 Cart: {cartItems.length} products
+            </Link>
+            <Link to="/wishlist" className="cart-link">
+            ❤️ Favorites: {wishlistItems ? wishlistItems.length : 0}
             </Link>
             </div>
         </header>

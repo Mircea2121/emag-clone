@@ -3,7 +3,7 @@ import "../data/ProductCard.css";
 import { useNavigate } from 'react-router-dom';
 
 
-function ProductCard({ product, onAddToCart, onAddToWishlist }) {
+function ProductCard({ product, handleAddToCart, onAddToWishlist }) {
     const navigate = useNavigate();
     return (
     <div className="product-card" onClick={() => navigate(`/produs/${product.id}`)} style={{ cursor: "pointer"}}>

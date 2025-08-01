@@ -119,3 +119,15 @@ button:hover {
     width: 100%;
   }
 }
+.back-button-container {
+  margin: 20px;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link:hover {
+  text-decoration: underline;
+}
