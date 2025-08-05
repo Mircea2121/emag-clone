@@ -39,10 +39,19 @@ function App() {
 
   const [products] = useState(productsData);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedCategory]);
+  
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredProducts = selectedCategory === "All"
-    ? products
-    : products.filter(p => p.categorie === selectedCategory);
+  const filteredProducts = products.filter((p) => {
+    const matchesCategory =
+      selectedCategory === "All" || p.categorie === selectedCategory;
+    const matchesSearch = 
+      searchTerm === "" || (p.name && p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
 
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -67,7 +76,12 @@ function App() {
 
   return (
     <>
-      <Header cartItems={cart} wishlistItems={wishlist} />
+      <Header 
+      cartItems={cart}
+      wishlistItems={wishlist}
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+       />
       <Routes>
         <Route 
           path="/" 
@@ -78,6 +92,7 @@ function App() {
               onAddToWishlist={handleAddToWishList}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
+              setSearchTerm={setSearchTerm}
             />
           } 
         />

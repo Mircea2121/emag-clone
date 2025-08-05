@@ -3,10 +3,7 @@ import ProductCard from './ProductCard';
 import "../data/ProductList.css";
 
 
-function ProductList({ products, onAddToCart, onAddToWishlist, setSelectedCategory }) {
-    const filteredProducts = setSelectedCategory === "All"
-      ? products
-      : products.filter(p => p.categorie === setSelectedCategory)
+function ProductList({ products, onAddToCart, onAddToWishlist, setSelectedCategory, setSearchTerm }) {
     return (
         <div className="page-layout">
 
@@ -15,7 +12,12 @@ function ProductList({ products, onAddToCart, onAddToWishlist, setSelectedCatego
         <ul>
           {["All", "Clothing", "Footwear", "Household", "Appliances", "Phones", "Stationery", "Sports"].map((cat) => (
             <li key={cat}>
-              <button onClick={() => setSelectedCategory(cat)}>{cat}</button>
+              <button onClick={() => {
+              setSelectedCategory(cat);
+              setSearchTerm("");
+          }}>
+              {cat}
+              </button>
             </li>
           ))}
         </ul>
